@@ -1,7 +1,8 @@
 
-# Void-Astro
+# Christian Rahl Personal Site
+This is my personal site. The goal being a place to share notes I have taken over many years.
 
-> 🧑‍🚀 Void-Astro is a minimalistic blog starter template designed for developers and writers who appreciate simplicity and elegance. Built with [Astro](https://astro.build/), this template leverages the power of [TailwindCSS](https://tailwindcss.com/) for styling and comes with a built-in dark mode, making it aesthetically pleasing and easy on the eyes.
+## 
 
 ## Features
 
