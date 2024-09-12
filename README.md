@@ -5,7 +5,7 @@ This is my personal site. The goal being a place to share notes I have taken ove
 ## Thanks to
 - Theme from [Void Astro](eAntillon/void-astro)
 - Github Actions from [Astros Docs](https://docs.astro.build/en/guides/deploy/aws/)
-- Google as always (who does anything without googling)
+- Search engines as always (who does anything without googling)
 
 ## Design goals
 
