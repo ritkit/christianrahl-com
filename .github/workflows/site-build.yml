@@ -5,6 +5,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  BUILD_PATH: "."
+  NODE_VER: "20"
+
+concurrency:
+  group: "site-build"
+  cancel-in-progress: false
+
 # Default to bash
 defaults:
   run:
@@ -13,7 +21,7 @@ defaults:
 jobs:
   # Build job
   build:
-    name: Build
+    name: Build Astro
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,49 +51,46 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ${{ env.NODE_VER}}
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
       #Build ASTRO
       - name: Install Modules
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build Application
-        run: npm run build
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
-      # Create a list of changed files under dist directory
-      - name: Create changed file list
-        id: changed-files
-        uses: tj-actions/changed-files@v45
-        with:
-
-          since_last_remote_commit: true
+          name: site-dist
+          path: /dist
 
   deploy:
-    name: Deploy
+    name: Deploy to AWS
     needs: build
     runs-on: ubuntu-Latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Get Artifact
-        uses: actions/artifact@
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy to S3
-        run: aws s3 sync --delete ./dist/ s3://${{ secrets.BUCKET_ID }}
+        run: aws s3 sync --delete ${{ env.BUILD_PATH }}/dist/ s3://${{ secrets.AWS_BUCKET_ID }}
 
   refresh:
-    name:
-    needs: deploy
+    name: Refresh Cloudflare
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Clear Cloudflare cache
+        uses: Cyb3r-Jak3/action-cloudflare-cache@v2.0.0
+        with:
+            zone: ${{ secrets.CF_ZONE_ID }}
+            api_token:  ${{ secrets.CF_CACHE_REFRESH_TOKEN }}
         
