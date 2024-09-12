@@ -6,7 +6,13 @@ import tailwind from '@astrojs/tailwind'
 // https://astro.build/config
 export default defineConfig({
     site: "https://www.christianrahl.com",
-    integrations: [mdx(), sitemap(), tailwind()],
+    integrations: [
+      mdx(), 
+      sitemap(), 
+      tailwind({
+        nesting: true
+      })
+    ],
     markdown: {
         shikiConfig: {
           // Choose from Shiki's built-in themes (or add your own)
