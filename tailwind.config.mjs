@@ -3,17 +3,13 @@ export default {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     darkMode: 'class',
     theme: {
-        colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        'darkblue': '#0A5098',
-        'lightblue': '#6599CE'
-        },
         extend: {},
+        //colors: {
+        //transparent: 'transparent',
+        //current: 'currentColor',
+        //'rblue': '#0A5098',
+        //'cblue': '#6599CE'
+        //},
     },
     plugins: [],
-
-    lightmode: 'class',
-    theme:{
-    }
 }
