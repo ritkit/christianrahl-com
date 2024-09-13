@@ -14,7 +14,6 @@ const posts = (await getCollection("blog")).sort(
 );
 
 const tags =  posts.flatMap(post => post.data.tags).filter((tag, index, self) => self.indexOf(tag) === index);
-
 const postByYear: {
   [year: number]: Post[];
 } = {}
@@ -33,11 +32,9 @@ posts.forEach((post) => {
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="w-full mx-auto my-4 max-w-screen-md dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
+  <body class="w-full mx-auto my-4  dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
     <Header />
-    <main
-      class="w-full max-w-screen-md mx-auto my-4 flex flex-col gap-4 justify-center px-4"
-    >
+    <main class="w-full  mx-auto my-4 flex flex-col gap-4 justify-center px-4">
         <ul class="flex flex-wrap gap-2">
             {tags.map(tag => (
                 <li>
@@ -49,9 +46,7 @@ posts.forEach((post) => {
         </ul>
     </main>
 
-    <main
-      class="w-full max-w-screen-md mx-auto my-4 px-4 flex flex-col gap-4 justify-center"
-    >
+    <main class="w-full  mx-auto my-4 px-4 flex flex-col gap-4 justify-center">
       {
         Object.keys(postByYear).sort(
           (a, b) => parseInt(b) - parseInt(a)

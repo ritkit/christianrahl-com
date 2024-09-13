@@ -1,11 +1,15 @@
+# My Personal Site
 
-# Christian Rahl Personal Site
 This is my personal site. The goal being a place to share notes I have taken over many years.
 
 ## Thanks to
 - Theme from [Void Astro](eAntillon/void-astro)
 - Github Actions from [Astros Docs](https://docs.astro.build/en/guides/deploy/aws/)
 - Search engines as always (who does anything without googling)
+
+## Badges (Because every scout needs badges)
+
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 
 ## Design goals
 

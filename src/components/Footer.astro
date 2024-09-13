@@ -1,28 +1,27 @@
 ---
-import { Icon } from "astro-iconify";
+import { Icon } from "astro-icon/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const today = new Date();
 ---
 
-<footer class="mt-20 md:mt-36 mx-4">
-  <div class="flex gap-4 border-b pb-8 mb-5 flex-col lg:flex-row  ">
-    <div class="w-full lg:w-2/3">
+<footer class="mt-20 mx-4">
+  <div class="flex gap-4 border-b pb-8 mb-5 flex-col md:max-xl:flex-row  ">
+    <div class="w-full md:max-l:w-2/3">
       <h1 class="text-lg font-bold">{SITE_TITLE}</h1>
       <p class="text-sm">
         {SITE_DESCRIPTION}
       </p>
-	  <div class="flex gap-3 mt-3">
-		<a href="https://linkedin.com/in/rahlxcb" target="_blank">
-			<Icon name="radix-icons:linkedin-logo" class="w-5 h-5 text-gray-600 hover:text-gray-500 dark:text-neutral-200"/>
-		</a>
-		<a href="https://www.github.com/ritkit" target="_blank">
-			<Icon name="radix-icons:github-logo" class="w-5 h-5 text-gray-600 hover:text-gray-500 dark:text-neutral-200"/>
-		</a>
-		
-	  </div>
+      <div class="flex gap-3 mt-3">
+        <a href="https://linkedin.com/in/rahlxcb" target="_blank">
+          <Icon name="radix-icons:linkedin-logo" class="w-5 h-5 text-gray-600 hover:text-gray-500 dark:text-neutral-200"/>
+        </a>
+        <a href="https://www.github.com/ritkit" target="_blank">
+          <Icon name="GitHub" class="w-5 h-5 iconify text-gray-600 hover:text-gray-500 dark:text-neutral-200"/>
+        </a>
+      </div>
     </div>
-    <div class="flex lg:ml-auto gap-10 mt-1">
+    <div class="flex md:max-xl:ml-auto gap-10 mt-1">
       <div>
         <h1 class="font-bold mb-3 text-base">
           Pages

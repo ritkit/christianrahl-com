@@ -1,19 +1,36 @@
-html {
-    font-family: 'Robotto', monospace;
-    width: 100%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+@layer base{
+    html {
+        font-family: 'Robotto', monospace;
+        width: 100%;
+    }
+    
+    body{
+        @apply max-w-screen-md;
+        @apply w-full;
+        @apply mx-auto;
+        @apply my-4;
+        @apply dark:bg-neutral-800;
+        @apply dark:text-neutral-300;
+        @apply transition-colors;
+        @apply duration-700;
+    }
 
-a:hover {
-    text-decoration: underline;
-}
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-img {
-    @apply rounded-lg;
-    max-width: 100%;
-    height: auto;
+    a:hover {
+        text-decoration: underline;
+    }
+
+    img {
+        @apply rounded-lg;
+        max-width: 100%;
+        height: auto;
+    }
 }

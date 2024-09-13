@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 418 418" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-12890,-937)">
+        <g id="GitHub" transform="matrix(4.16667,0,0,4.16667,12890.6,937.5)">
+            <rect x="0" y="0" width="100" height="100" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="100" height="100"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1.14771,0,0,1.14771,-7.19714,-6.70638)">
+                    <g transform="matrix(0,-1,-1,0,33.0428,9.7362)">
+                        <ellipse cx="-9.527" cy="0" rx="9.526" ry="9.527" style="fill:none;stroke:rgb(10,80,152);stroke-width:3.49px;"/>
+                    </g>
+                    <g transform="matrix(0,-1,-1,0,33.0428,70.0272)">
+                        <ellipse cx="-9.527" cy="0" rx="9.526" ry="9.527" style="fill:none;stroke:rgb(10,80,152);stroke-width:3.49px;"/>
+                    </g>
+                    <g transform="matrix(0,-1,-1,0,66.6283,70.0267)">
+                        <ellipse cx="-9.527" cy="0" rx="9.526" ry="9.527" style="fill:none;stroke:rgb(10,80,152);stroke-width:3.49px;"/>
+                    </g>
+                    <g transform="matrix(0,1,1,0,53.662,49.4081)">
+                        <path d="M-20.619,-20.619L20.619,-20.619" style="fill:none;fill-rule:nonzero;stroke:rgb(10,80,152);stroke-width:6.1px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,66.6289,30.5893)">
+                        <path d="M0,39.438C0,39.438 1.823,24.114 -16.622,23.86C-35.067,23.605 -33.586,0 -33.586,0" style="fill:none;fill-rule:nonzero;stroke:rgb(10,80,152);stroke-width:6.1px;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
