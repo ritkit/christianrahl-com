@@ -21,7 +21,10 @@ This is my personal site. The goal being a place to share notes I have taken ove
 - **Adaptable** - Can migrate the server to new hosts if someone becomes to expensive
 
 ## Roadmap
+Items I want to work on in order.
 - [ ] Initial Site Rollout
+- [ ] Write hello, and how I built this site blog.
 - [ ] Migrate some old blog posts
-- [ ] Add cheat sheet page
 - [ ] Create an Album section
+- [ ] Add cheat sheet page
+
