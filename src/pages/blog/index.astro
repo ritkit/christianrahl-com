@@ -37,7 +37,7 @@ posts.forEach((post) => {
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="w-full mx-auto my-4  dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
-    <Header />
+    <Header client:load/>
     <main class="w-full mx-auto my-4 flex flex-row gap-4 justify-left px-4">
       <h1 class="text-neutral-800 dark:text-neutral-100 font-bold mb-0">Tags</h1>
       <ul class="flex flex-wrap gap-2">
@@ -64,7 +64,7 @@ posts.forEach((post) => {
               <div class="flex gap-2 justify-between border-b pb-4">
                 <div class="flex flex-col w-2/3 gap-4">
                   
-                  <a class="font-bold text-lg" href={`/blog/${post.slug}`}>
+                  <a class="font-bold text-lg" id="title" href={`/blog/${post.slug}`} aria-labelledby="title">
                     {post.data.title}
                   </a>
                   <p>{post.data.description}</p>
@@ -78,10 +78,10 @@ posts.forEach((post) => {
                   <div class="pb-1">
                     <FormattedDate date={post.data.pubDate}/>
                   </div>
-                  <a href={`/blog/${post.slug}`} class="flex-none">
+                  <a href={`/blog/${post.slug}`} class="flex-none" aria-labelledby="title">
                     <BlogHeroImg
-                      imageName={post.data.heroImage}
-                      altText=""
+                      src={post.data.heroImage}
+                      alt=""
                       class="bg-contain border border-gray-200"
                     />
                   </a>
