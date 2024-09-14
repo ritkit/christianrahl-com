@@ -1,0 +1,19 @@
+---
+import type { ImageMetadata } from 'astro';
+import { imageMetadata } from 'astro/assets/utils';
+import { Image } from 'astro:assets';
+
+interface props{
+    imageName: string;
+    altText: string;
+}
+
+const { imageName, altText } = Astro.props;
+const images = import.meta.glob<{ defaut: ImageMetadata }>('/src/images/blogheros/*.{jpeg,jpg,png,gif}')
+
+const fullImagePath = "/src/images/blogheros/"+imageName;
+
+if (!images[fullImagePath]) throw new Error(`"${fullImagePath}" does not exist in glob: "/src/images/blogheros/*.{jpeg,jpg,png,gif}"`);
+---
+
+<Image src={images[fullImagePath]()} alt={altText} />

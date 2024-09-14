@@ -1,11 +1,15 @@
 ---
+import { getCollection, type CollectionEntry } from "astro:content";
+import { Image } from 'astro:assets';
+
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection, type CollectionEntry } from "astro:content";
+
 import FormattedDate from "@components/FormattedDate.astro";
 import TagLink from "@components/TagLink.astro";
+import BlogHeroImg from "@components/BlogHeroImg.astro";
 
 type Post = CollectionEntry<'blog'>;
 
@@ -34,16 +38,17 @@ posts.forEach((post) => {
   </head>
   <body class="w-full mx-auto my-4  dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
     <Header />
-    <main class="w-full  mx-auto my-4 flex flex-col gap-4 justify-center px-4">
-        <ul class="flex flex-wrap gap-2">
-            {tags.map(tag => (
-                <li>
-                    <a href={`/tags/${tag}`} class=" p-1 rounded-md">
-                        #{tag}
-                    </a>
-                </li>
-            ))}
-        </ul>
+    <main class="w-full mx-auto my-4 flex flex-row gap-4 justify-left px-4">
+      <h1 class="text-neutral-800 dark:text-neutral-100 font-bold mb-0">Tags</h1>
+      <ul class="flex flex-wrap gap-2">
+          {tags.map(tag => (
+              <li>
+                  <a href={`/tags/${tag}`} class=" p-1 rounded-md">
+                      #{tag}
+                  </a>
+              </li>
+          ))}
+      </ul>
     </main>
 
     <main class="w-full  mx-auto my-4 px-4 flex flex-col gap-4 justify-center">
@@ -52,31 +57,36 @@ posts.forEach((post) => {
           (a, b) => parseInt(b) - parseInt(a)
         ).map((year) => (
           <div class="flex flex-col">
-            <h2 class=" text-black dark:text-white font-bold mb-8">{year}</h2>
-            <div class="flex flex-col gap-4">
-              
+            <h1 class=" text-black dark:text-white font-bold mb-8">{year}</h1>
+            <div class="flex flex-col gap-4"> 
             {
               postByYear[parseInt(year)].map((post: Post) => (
               <div class="flex gap-2 justify-between border-b pb-4">
-            <div class="flex flex-col gap-4">
-              <FormattedDate date={post.data.pubDate} />
-              <a class="font-bold text-lg" href={`/blog/${post.slug}`}>
-                {post.data.title}
-              </a>
-              <div class="flex gap-2">
-                {post.data.tags?.map((i: string) => {
-                  return <TagLink tag={i} />;
-                })}
+                <div class="flex flex-col w-2/3 gap-4">
+                  
+                  <a class="font-bold text-lg" href={`/blog/${post.slug}`}>
+                    {post.data.title}
+                  </a>
+                  <p>{post.data.description}</p>
+                  <div class="flex gap-2">
+                    {post.data.tags?.map((i: string) => {
+                      return <TagLink tag={i} />;
+                    })}
+                  </div>
+                </div>
+                <div class="flex flex-col w-1/3 items-">
+                  <div class="pb-1">
+                    <FormattedDate date={post.data.pubDate}/>
+                  </div>
+                  <a href={`/blog/${post.slug}`} class="flex-none">
+                    <BlogHeroImg
+                      imageName={post.data.heroImage}
+                      altText=""
+                      class="bg-contain border border-gray-200"
+                    />
+                  </a>
+                </div>
               </div>
-            </div>
-            <a href={`/blog/${post.slug}`}>
-              <img
-                src={post.data.heroImage}
-                alt=""
-                class="w-40 h-24 bg-contain border border-gray-200"
-              />
-            </a>
-          </div>
               ))
             }
             </div>

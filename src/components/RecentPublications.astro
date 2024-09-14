@@ -1,14 +1,16 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "./FormattedDate.astro";
-import TagLink from "./TagLink.astro";
+
+import FormattedDate from "@components/FormattedDate.astro";
+import TagLink from "@components/TagLink.astro";
+import BlogHeroImg from "@components/BlogHeroImg.astro";
 
 const posts = await getCollection("blog");
 let numberOfPostsToDisplay = 3;
 let recentPosts = posts.slice(0, numberOfPostsToDisplay);
 ---
 
-<div class="px-4 md:px-16 flex flex-col gap-4 mt-16">
+<div class="px-4 md-maxl:w-100 flex flex-col gap-5 mt-16">
   <h1 class="font-large text-base">Recent Publications</h1>
   {
     recentPosts.map((post: any) => (
@@ -26,12 +28,12 @@ let recentPosts = posts.slice(0, numberOfPostsToDisplay);
           </div>
           <FormattedDate date={post.data.pubDate} />
         </div>
-        <div class="flex-none">
+        <div class="flex-none w-1/3">
           <a href={`/blog/${post.slug}`}>
-            <img
-              src={post.data.heroImage}
-              alt=""
-              class="w-40 h-24 bg-contain border border-gray-200"
+            <BlogHeroImg
+              imageName={post.data.heroImage}
+              altText=""
+              class="bg-contain border border-gray-200"
             />
           </a>
         </div>

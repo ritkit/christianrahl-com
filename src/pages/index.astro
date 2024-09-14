@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -14,7 +15,7 @@ import RecentPublications from "@components/RecentPublications.astro";
   <body>
     <Header />
     <main class="flex flex-col justify-center">
-      <div class="px-4 md:px-16 flex flex-col gap-4">
+      <div class="px-4 md:w-100 flex flex-col gap-4">
         <h1 class="text-2xl md:text-5xl w-full"> Welcome, I am Christian Rahl!</h1>
         <p class="w-full text-justify text-base md:text-lg">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi officia
@@ -23,18 +24,11 @@ import RecentPublications from "@components/RecentPublications.astro";
         </p>
       </div>
       <div class="w-full flex flex-col items-center gap-2.5 px-4 lg:px-0 mt-6">
-        <img
-          src="https://images.unsplash.com/photo-1635627408144-6bf36d28fb98"
-          alt="Astronaut"
-        />
+        <Image src="https://images.unsplash.com/photo-1625442772842-329d4f08ea14" inferSize alt="Astronaut"/>
         <p class="italic text-xs text-gray-600 dark:text-neutral-400">
-          Foto de <a
-            href="https://unsplash.com/es/@niklasjonasson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Niklas Jonasson</a
-          > en <a
-            href="https://unsplash.com/es/fotos/un-cuerpo-de-agua-con-arboles-en-el-fondo-j_WW0u2yYAE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Unsplash</a
-          >
+          Photo by <a href="https://unsplash.com/@winstonchen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Winston Chen</a> on 
+          <a href="https://unsplash.com/photos/yellow-and-gray-robot-toy-_sN38KiOPMk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+          Unsplash</a>
         </p>
       </div>
 	    <RecentPublications />

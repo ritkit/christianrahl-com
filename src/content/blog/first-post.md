@@ -2,8 +2,8 @@
 title: 'Exploring Technology Trends'
 description: 'An overview of the latest innovations in technology'
 pubDate: 'Jun 15 2024'
-heroImage: '/images/blogheros/blog-placeholder-3.jpg'
-tags: ['technology', 'innovation']
+heroImage: 'blog-placeholder-3.jpg'
+tags: ['technology', 'innovation', 'test', 'floodtags', 'evenmoretags', '1', '2', '3']
 draft: true
 ---
 
