@@ -1,0 +1,70 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+import BlogCard from "@components/BlogCard.astro";
+
+type Post = CollectionEntry<'blog'>;
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const tags =  posts.flatMap(post => post.data.tags).filter((tag, index, self) => self.indexOf(tag) === index);
+const postByYear: {
+  [year: number]: Post[];
+} = {}
+
+posts.forEach((post) => {
+  const year = post.data.pubDate.getFullYear()
+  if (!postByYear[year]) {
+    postByYear[year] = []
+  }
+  postByYear[year].push(post)
+})
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="w-full mx-auto my-4  dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
+    <Header/>
+    <main class="w-full mx-auto my-4 flex flex-row gap-4 justify-left px-4">
+      <h1 class="text-neutral-800 dark:text-neutral-100 font-bold mb-0">Tags</h1>
+      <ul class="flex flex-wrap gap-2">
+          {tags.map(tag => (
+              <li>
+                  <a href={`/tags/${tag}`} class=" p-1 rounded-md">
+                      #{tag}
+                  </a>
+              </li>
+          ))}
+      </ul>
+    </main>
+
+    <main class="w-full  mx-auto my-4 px-4 flex flex-col gap-4 justify-center">
+      {
+        Object.keys(postByYear).sort(
+          (a, b) => parseInt(b) - parseInt(a)
+        ).map((year) => (
+          <div class="flex flex-col">
+            <h1 class=" text-black text-2xl dark:text-white font-bold mb-8">{year}</h1>
+            <div class="flex flex-col gap-4 border-"> 
+              {postByYear[parseInt(year)].map((post: Post) => (
+                <div class="flex"><BlogCard post={post}/></div>
+              ))}
+            </div>
+
+          </div>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>

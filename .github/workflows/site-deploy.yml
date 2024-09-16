@@ -1,0 +1,98 @@
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Build Site with ASTRO
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Run workflow on release
+
+env:
+  BUILD_PATH: "."
+  NODE_VER: "20"
+
+concurrency:
+  group: "site-build"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    name: Build Astro
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      #Prepare and restore cache for build repositories
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VER}}
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
+      #Build ASTRO
+      - name: Install Modules
+        run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build Application
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: site-dist
+          path: /dist
+
+  deploy:
+    name: Deploy to AWS
+    needs: build
+    runs-on: ubuntu-Latest
+    steps:
+      - name: Get Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Deploy to S3
+        run: aws s3 sync --delete ${{ env.BUILD_PATH }}/dist/ s3://${{ secrets.DEV_AWS_BUCKET_ID }}
+
+  refresh:
+    name: Refresh Cloudflare
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear Cloudflare cache
+        uses: Cyb3r-Jak3/action-cloudflare-cache@v2.0.0
+        with:
+            zone: ${{ secrets.CF_ZONE_ID }}
+            api_token:  ${{ secrets.CF_CACHE_REFRESH_TOKEN }}
+        

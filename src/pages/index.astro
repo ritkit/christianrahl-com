@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import AlertHead from "@components/AlertHead.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import RecentPublications from "@components/RecentPublications.astro";
+
+import PalmerStarryNight from '/src/images/Palmer2024-DarkSkyNight-small-1-2.jpg'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header/>
+    <!--AlertHead alertTitle="Work In Progress" description="I recently changed this entire site. Updating content." shrinkable/-->
+    <main class="flex flex-col justify-center">
+      <div class="px-2 md:w-100 space-y-4 w-full py-2 text-justify text-base md:text-lg">
+        <p>
+          <span class="text-2xl md:text-4xl">Welcome!<!--Icon name="Location" class="align-text-bottom"/--></span> I'm Christian Rahl, 
+          but most people call me Kit. I'm a network engineer, photographer, traveler, DJ, and enthusiastic 
+          volunteer. This site will have all sorts of cool stuff, like networking, programming, travel, photography highlights, 
+          and other random interesting topics. If you want to reach out, feel free to <a href="mailto:contact@christianrahl.com" 
+          class="underline decoration-dashed hover:dark:text-cblue-light hover:text-rblue-dark">email</a> me. Can't wait to hear from you! You can also check out my most recent blog posts below, or 
+          read more <a href="/about" class="underline decoration-dashed hover:dark:text-cblue-light hover:text-rblue-dark">about me</a>.
+        </p>
+        <p>
+          As a side note, this site has been completely rebuilt as of 15 September 2024. I am moving some of my old blog posts 
+          from my previous WordPress site here. Since this site is self built and not utilizing wordpress, it requires extra 
+          work. So, while it may look sparse at this time, it will fill in eventually. Thank you for understanding.
+        </p>
+      </div>
+      <div class="w-full flex flex-col items-center gap-2.5 px-4 lg:px-0 mt-6">
+        <Image src={PalmerStarryNight} alt="Palmer Station Milky way"/>
+        <p class="italic text-xs text-gray-600 dark:text-neutral-400">
+          My photo at Palmer Station 2024
+        </p>
+      </div>
+	    <RecentPublications />
+    </main>
+    <Footer />
+  </body>
+</html>
+

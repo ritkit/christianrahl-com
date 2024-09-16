@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "@components/BlogCard.astro";
+
+const posts = await getCollection("blog");
+let numberOfPostsToDisplay = 3;
+let recentPosts = posts.slice(0, numberOfPostsToDisplay);
+---
+
+
+{recentPosts && (
+    <div class="px-2 md:w-100 flex flex-col gap-5 mt-4">
+      <h1 class="font-large text-4xl mt-6">Recent Publications</h1>
+      {recentPosts.map((post: any) => (
+        <div class="flex"><BlogCard post={post}/></div>
+      ))}
+      <a class="border flex justify-center items-center hover:no-underline hover:bg-gray-200 
+        hover:border-gray-300 transition-colors ease-in-out bg-gray-100 w-full max-w-xs mx-auto mt-4
+        rounded-lg text-gray-700 text-s h-8 font-medium border-gray-200 dark:bg-neutral-700 dark:border-neutral-600 
+        dark:text-neutral-300 hover:dark:bg-neutral-700/50 hover:dark:border-neutral-600 hover:dark:text-neutral-100"
+        href="/blog">View more</a>
+    </div>
+  )
+}

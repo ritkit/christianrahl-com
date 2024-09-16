@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 418 418" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g transform="matrix(1,0,0,1,-7734,-468)">
+        <g id="E-Mail" transform="matrix(4.16667,0,0,4.16667,7734.38,468.75)">
+            <rect x="0" y="0" width="100" height="100" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="100" height="100"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1.18686,0,0,1.12347,87.3108,19.8168)">
+                    <path d="M0,53.732L-62.873,53.732C-66.85,53.732 -70.073,50.509 -70.073,46.532L-70.073,7.199C-70.073,3.223 -66.85,0 -62.873,0L0,0C3.977,0 7.2,3.223 7.2,7.199L7.2,46.532C7.2,50.509 3.977,53.732 0,53.732Z" style="fill:none;fill-rule:nonzero;stroke:rgb(12,79,152);stroke-width:5.19px;"/>
+                </g>
+                <g transform="matrix(1.17455,0,0,1,92.6813,46.5546)">
+                    <path d="M0,-23.757L-35.625,0.102C-36.048,0.386 -36.6,0.384 -37.021,0.098L-72.677,-24.143" style="fill:none;fill-rule:nonzero;stroke:rgb(12,79,152);stroke-width:5.5px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
