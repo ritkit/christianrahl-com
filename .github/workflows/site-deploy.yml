@@ -65,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: site-dist
-          path: /dist
+          path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     name: Deploy to AWS
