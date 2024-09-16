@@ -63,7 +63,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} astro build
       - run: ls
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site-dist
           path: ${{ env.BUILD_PATH }}/dist
