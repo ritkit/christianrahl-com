@@ -1,3 +1,4 @@
+//import { deselectScripts } from 'astro/virtual-modules/transitions-swap-functions.js'
 import { defineCollection, z } from 'astro:content'
 
 const blog = defineCollection({
@@ -15,6 +16,38 @@ const blog = defineCollection({
         draft: z.boolean().optional()
     }),
 })
+
+/*const jobs = defineCollection({
+    type: 'data',
+    schema: z.object({
+        jobTitle: z.string(),
+        companyName: z.string(),
+        yearStarted: z.coerce.date(),
+        yearEnded: z.coerce.date(),
+        description: z.string(),
+        location: z.string()
+    }),
+})
+
+const education = defineCollection({
+    type: 'data',
+    schema: z.object({
+        degree: z.string(),
+        school: z.string(),                                                         
+        yearStarted: z.coerce.date(),
+        yearEnded: z.coerce.date(),
+        minors: z.array(z.string()).optional(),
+        description: z.string()
+    })
+})
+
+const skills = defineCollection({
+    type: 'data',
+    schema: z.object({
+        heading: z.string(),
+        skillList: z.array(z.string())
+    })
+})*/
 
 export const collections = { blog }
 

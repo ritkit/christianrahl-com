@@ -1,46 +1,24 @@
 ---
 import { getCollection } from "astro:content";
-
-import FormattedDate from "@components/FormattedDate.astro";
-import TagLink from "@components/TagLink.astro";
-import BlogHeroImg from "@components/BlogHeroImg.astro";
+import BlogCard from "@components/BlogCard.astro";
 
 const posts = await getCollection("blog");
 let numberOfPostsToDisplay = 3;
 let recentPosts = posts.slice(0, numberOfPostsToDisplay);
 ---
 
-<div class="px-4 md-maxl:w-100 flex flex-col gap-5 mt-16">
-  <h1 class="font-large text-base">Recent Publications</h1>
-  {
-    recentPosts.map((post: any) => (
-      <div class="flex gap-2 justify-between border-b pb-4">
-        <div class="flex flex-col gap-2">
-          <a class="font-bold text-lg" id="title" href={`/blog/${post.slug}`} aria-labelledby="title">
-            {post.data.title}
-          </a>
-          <p>{post.data.description}</p>
-          <div class="flex gap-2">
-              {post.data.tags?.map((i: any) => {
-                return <TagLink tag={i} />;
-              })}
-          </div>
-          <FormattedDate date={post.data.pubDate} />
-        </div>
-        <div class="flex-none w-1/3">
-          <a href={`/blog/${post.slug}`} aria-labelledby="title">
-            <BlogHeroImg
-              src={post.data.heroImage}
-              alt=""
-              class="bg-contain border border-gray-200"
-            />
-          </a>
-        </div>
-      </div>
-    ))
-  }
-  <a
-    class="border flex justify-center items-center hover:no-underline hover:bg-gray-200 hover:border-gray-300 transition-colors ease-in-out bg-gray-100 w-full max-w-xs mx-auto mt-12 rounded-lg text-gray-700 text-xs h-8 font-medium border-gray-200 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-300 hover:dark:bg-neutral-700/50 hover:dark:border-neutral-600 hover:dark:text-neutral-100"
-    href="/blog">View more</a
-  >
-</div>
+
+{recentPosts && (
+    <div class="px-2 md:w-100 flex flex-col gap-5 mt-4">
+      <h1 class="font-large text-4xl mt-6">Recent Publications</h1>
+      {recentPosts.map((post: any) => (
+        <div class="flex"><BlogCard post={post}/></div>
+      ))}
+      <a class="border flex justify-center items-center hover:no-underline hover:bg-gray-200 
+        hover:border-gray-300 transition-colors ease-in-out bg-gray-100 w-full max-w-xs mx-auto mt-4
+        rounded-lg text-gray-700 text-s h-8 font-medium border-gray-200 dark:bg-neutral-700 dark:border-neutral-600 
+        dark:text-neutral-300 hover:dark:bg-neutral-700/50 hover:dark:border-neutral-600 hover:dark:text-neutral-100"
+        href="/blog">View more</a>
+    </div>
+  )
+}

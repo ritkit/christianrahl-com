@@ -25,6 +25,8 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@iconify-json/radix-icons": "^1.2.0"
+    "@iconify-json/radix-icons": "^1.2.0",
+    "@iconify-json/ri": "^1.2.0",
+    "@iconify-json/streamline": "^1.2.0"
   }
 }

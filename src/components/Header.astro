@@ -4,28 +4,31 @@ import {
   Astronav,
   MenuItems,
   MenuIcon,
-  Dropdown,
-  DropdownItems,
-  DropdownSubmenu,
+  //Dropdown,
+  //DropdownItems,
+  //DropdownSubmenu,
 } from "astro-navbar";
 import ThemeIcon from "./ThemeIcon.astro";
-import Logo from "./LogoIcon.astro";
 ---
 
-<header class="md:flex py-4 pt-2 px-4 sm:px-6 xl:px-0 gap-5 mb-5 md:mb-28 w-full">
+<header class="md:flex px-2 gap-5 mb-4 w-full">
   <Astronav>
     <div class="flex w-full justify-between items-end border-b md:border-none pb-4 md:pb-0">
-      <a class="font-bold text-2xl flex gap-2 items-center group" href="/"><Icon name="CR-Logo" class="h-10 stroke-gray-800 dark:stroke-gray-300 group-hover:stroke-current" /><p class="group-hover:text-cblue group-hover:dark:text-cblue">Christian</p><p class="group-hover:text-rblue group-hover:dark:text-rblue">Rahl</p></a>
+      <a class="font-bold text-xl md:text-4xl flex gap-2 items-center group" href="/" aria-label="Home link">
+	  	<Icon name="CR-Logo" class="stroke-gray-800 dark:stroke-gray-300 group-hover:stroke-current" />
+		<span class="group-hover:text-cblue-light group-hover:underline decoration-cblue-light">CHRISTIAN</span>
+		<span class="group-hover:text-rblue-light group-hover:underline decoration-rblue-light">RAHL</span>
+	  </a>
       <div class="md:hidden flex items-center justify-center gap-4">
         <MenuIcon class="w-4 h-4 text-gray-800 dark:text-neutral-300" />
 		<ThemeIcon class="w-10" />
       </div>
     </div>
     <MenuItems class="hidden md:flex">
-      <ul class="flex flex-col md:flex-row md:gap-5 gap-3 mt-3 md:mt-0  pb-4 md:pb-0 border-b border-neutral-400 md:border-b-0">
+      <ul class="flex flex-col md:flex-row md:text-xl md:gap-5 gap-3 mt-3 md:mt-0 pb-4 md:pb-0 border-b border-neutral-400 md:border-b-0">
 		<li class="flex items-center"><a href="/about">About</a></li>
 		<li class="flex items-center"><a href="/blog">Blog</a></li>
-		<ThemeIcon class="w-10 hidden md:flex" />
+		<ThemeIcon class="max-h-10 max-w-10 hidden md:flex" />
 		<!-- <li>
 			<Dropdown class="group">
 				<button class="flex items-center">

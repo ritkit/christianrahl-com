@@ -11,14 +11,13 @@ export default defineConfig({
       mdx(), 
       sitemap(), 
       tailwind({
-        nesting: true
+        nesting: false
       }), 
       icon()],
     markdown: {
         shikiConfig: {
           // Choose from Shiki's built-in themes (or add your own)
           // https://shiki.style/themes
-          // Alternatively, provide multiple themes
           // See note below for using dual light/dark themes
           themes: {
             light: 'poimandres',

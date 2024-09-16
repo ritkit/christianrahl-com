@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+	alertTitle: string;
+	description: string;
+	shrinkable: boolean;
+}
+
+const { alertTitle, description, shrinkable } = Astro.props
+---
+<div class="sticky top-2 flex justify-center items-center w-full">
+      <div class="flex items-center rounded-full bg-orange-400 bg-opacity-90 text-orange-50 p-2 leading-none  size-fit" role="alert">
+            <span class="mr-1 flex rounded-full bg-orange-600 px-2 py-1 text-xs font-bold uppercase">{alertTitle}</span>
+            <span class="mx-1 flex-auto text-left font-semibold">{description}</span>
+            <a onclick="this.parentElement.style.display='none'" class="ml-1 cursor:pointer group">
+                  <Icon name="radix-icons:cross-2" 
+                        class="cursor:pointer transition-colors ease-in-out duration-700 iconify text-orange-800 w-4 h-4 group-hover:text-orange-50"/>
+            </a>
+      </div>
+</div>
