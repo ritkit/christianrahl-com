@@ -33,4 +33,5 @@ h1{
 
 img {
     @apply rounded-lg;
+    @apply h-auto
 }
