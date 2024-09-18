@@ -4,7 +4,7 @@ description: 'A reintroduction of my site and why it needed it.'
 pubDate: '15 Sept 2024'
 heroImage: 'hello-hero.jpg'
 tags: ['statusupdate', 'personal', 'website']
-draft: true
+draft: false
 ---
 
 Hello, again. This is a relaunch of my website due to a variety of reasons. However there were two biggest reason as to why I reworked my website.
