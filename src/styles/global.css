@@ -9,7 +9,6 @@ html {
 
 body {
     @apply max-w-screen-md;
-    @apply w-full;
     @apply mx-auto;
     @apply my-4;
     @apply text-neutral-800;
@@ -29,10 +28,10 @@ a:hover {
 }
 
 h1{
-    @apply: md:text-2xl
+    @apply md:text-2xl
 }
 
 img {
     @apply rounded-lg;
-    height: auto;
+    @apply h-auto
 }

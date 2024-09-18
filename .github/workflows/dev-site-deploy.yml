@@ -8,7 +8,7 @@ on:
   # Run workflow on release
 
 env:
-  BUILD_PATH: "./dev"
+  BUILD_PATH: "."
   NODE_VER: "20"
   ARTIFACT_NAME: "DEV-SITE-DIST" 
 
@@ -61,7 +61,7 @@ jobs:
       - name: Install Modules
         run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build Application
-        run: ${{ steps.detect-package-manager.outputs.runner }} astro build
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

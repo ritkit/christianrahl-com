@@ -31,10 +31,10 @@ const { title, description, pubDate, updatedDate, heroImage, tags, draft = false
           </h1>
         </div>
         <div class="text-gray-500 dark:text-neutral-400 text-xs font-medium flex justify-between mb-2">
-          <div><FormattedDate date={pubDate} /> {updatedDate && (<span>( Updated <FormattedDate date={updatedDate}/>)</span>)}</div>
-          <p class="text-gray-500 dark:text-neutral-400 text-xs font-medium tracking-wide">
+          <div><FormattedDate date={pubDate}/>{updatedDate && (<span> &#40;Updated <FormattedDate date={updatedDate}/>&#41;</span>)}</div>
+          <!--p class=" tracking-wide">
             5 min read
-          </p>
+          </p-->
         </div>
         <div>
           {
@@ -75,7 +75,6 @@ const { title, description, pubDate, updatedDate, heroImage, tags, draft = false
         max-width: 100%;
         height: auto;
         display: block;
-        margin: 20px 0;
       }
 
       /* Headings */
@@ -100,7 +99,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, draft = false
       p {
           margin-top: 0;
           margin-bottom: 16px;
-          @apply text-justify
+          text-align: justify;
       }
 
       /* Blockquotes */
