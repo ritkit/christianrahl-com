@@ -12,7 +12,7 @@ on:
   
 
 env:
-  BUILD_PATH: "./dev"
+  BUILD_PATH: "."
   NODE_VER: "20"
   ARTIFACT_NAME: "DEV-SITE-DIST" 
 
