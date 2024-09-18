@@ -38,6 +38,11 @@ const { title, description, image = '/src/images/blog-placeholder-about.jpg' } =
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
+<!-- Content Security -->
+<!--meta http-equiv="Content-Security-Policy" content="default-src 'self' christianrahl.com *.christianrahl.com ; img-src christianrahl.com *.christianrahl.com; 
+  media-src christianrahl.com *.christianrahl.com; frame-ancestors self; script-src static.cloudflareinsights.com christianrahl.com *.christianrahl.com; 
+  connect-src cloudflareinsights.com"-->
+
 <!-- RSS Auto-Discovery -->
 <link rel="alternate" type="application/rss+xml" title={title} href={new URL("feed.xml", Astro.site)} />
 
