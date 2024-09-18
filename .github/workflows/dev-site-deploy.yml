@@ -1,14 +1,18 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
+#Workflow for building and deploying a Hugo site to AWS S3 and updating cloudflare cache
 name: Build and deploy dev Site
 
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Run workflow on release
+  # Run workflow on completed push to Dev Branch
+  push:
+    branches:
+      - 'Dev'
+  
 
 env:
-  BUILD_PATH: "./dev"
+  BUILD_PATH: "."
   NODE_VER: "20"
   ARTIFACT_NAME: "DEV-SITE-DIST" 
 
@@ -61,7 +65,7 @@ jobs:
       - name: Install Modules
         run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build Application
-        run: ${{ steps.detect-package-manager.outputs.runner }} astro build
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
