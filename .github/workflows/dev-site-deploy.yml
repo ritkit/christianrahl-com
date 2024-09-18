@@ -5,7 +5,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Run workflow on release
+  # Run workflow on completed push to Dev Branch
+  on:
+    push:
+      branches:
+        - 'Dev'
+  
 
 env:
   BUILD_PATH: "."
