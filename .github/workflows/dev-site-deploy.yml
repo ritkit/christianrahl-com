@@ -1,4 +1,4 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
+#Workflow for building and deploying a Hugo site to AWS S3 and updating cloudflare cache
 name: Build and deploy dev Site
 
 on:
