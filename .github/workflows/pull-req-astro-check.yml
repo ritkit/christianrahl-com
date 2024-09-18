@@ -1,23 +1,14 @@
-#Workflow for building and deploying a Hugo site to AWS S3 and updating cloudflare cache
-name: Build Site with ASTRO
+#Run Astro Check on all pull requests.
+name: Check pull request for Astro Errors.
 
 on:
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-  # Run workflow on release
-  push:
-    branches:
-      - 'main'
+  #pull_request:
+    #types: [opened, reopened]
 
 env:
   BUILD_PATH: "."
   NODE_VER: "20"
-  ARTIFACT_NAME: "DEV-SITE-DIST" 
-
-concurrency:
-  group: "site-build"
-  cancel-in-progress: false
 
 # Default to bash
 defaults:
@@ -25,9 +16,9 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
-  build:
-    name: Build Astro
+  #Check the astro pull request
+  checks:
+    name: Check Pull Request
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -65,39 +56,3 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build Application
         run: ${{ steps.detect-package-manager.outputs.runner }} build
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.BUILD_PATH }}/dist
-
-  deploy:
-    name: Deploy to AWS
-    needs: build
-    runs-on: ubuntu-Latest
-    steps:
-      - name: Get Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.BUILD_PATH }}/dist/
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: Deploy to S3
-        run: aws s3 sync --delete ${{ env.BUILD_PATH }}/dist/ s3://${{ secrets.AWS_BUCKET_ID }}
-
-  refresh:
-    name: Refresh Cloudflare
-    needs: [build, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clear Cloudflare cache
-        uses: Cyb3r-Jak3/action-cloudflare-cache@v2.0.0
-        with:
-            zone: ${{ secrets.CF_ZONE_ID }}
-            api_token:  ${{ secrets.CF_CACHE_REFRESH_TOKEN }}
-        
