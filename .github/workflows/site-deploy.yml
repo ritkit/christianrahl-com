@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 
   # Run workflow on release
+  push:
+    branches:
+      - 'main'
 
 env:
   BUILD_PATH: "."
