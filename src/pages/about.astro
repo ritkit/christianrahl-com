@@ -3,6 +3,7 @@ import Layout from '@layouts/BlogPost.astro';
 import Image from 'astro/components/Image.astro';
 
 import DeathStar from '@images/RFNightSky-1.jpg'
+import RedCrossVest from '@images/Red-Cross-Vest.jpg'
 ---
 
 <Layout
@@ -24,17 +25,33 @@ import DeathStar from '@images/RFNightSky-1.jpg'
 <h4 class="mt-4 mb-1">Networking</h4>
 <div class="flex flex-row items-start gap-x-4">
 	<p class="w-3/5">
-		I have been networking since high school, where I took two classes that were a partnership between 
-		the local community college and my high school. I continued into college, focusing on networking, 
-		computer science, mathematics, and communications. After college, I have touched many networking areas, 
-		from ISP to enterprise, TAC, and professional services.
-	
+		My journey in networking began in high school, where I enrolled in two classes offered in partnership 
+		between the local community college and my high school. This early interest blossomed into a college 
+		focus on networking, computer science, mathematics, and communications. Post-graduation, I delved into 
+		various networking areas, from ISP to enterprise, TAC, and professional services, showcasing my 
+		dedication to this field. 
 	</p>
 	<Image src={DeathStar} alt="Raydome at South Pole with laser going straight up" class="w-2/5 aspect-auto"/>
 </div>
 
-<h4 class="mt-4 mb-1">Activities!</h4>
+<h4 class="mt-4 mb-1 mx-auto text-right">Activities!</h4>
+<div class="flex flex-row items-start gap-x-4">
+	<Image src={RedCrossVest} alt="My red cross vest" class="w-2/5 aspect-auto"/>
+	<p class="w-3/5">
+		Outside of my professional life, I am an adventurer at heart, constantly seeking new experiences. My 
+		two favorite interests, biking and traveling, perfectly reflect this. I've cycled nearly the entire 
+		length of New Zealand and regularly embark on gravel and mountain bike rides. I also find time to 
+		volunteer, supporting local non-profits in their IT infrastructure. My adventurous spirit also extends to 
+		my role as an Amateur Radio operator, photographer, DJ, and other side projects. 
+	</p>
+</div>
+
+<h4 class="mt-4 mb-1">What is next?</h4>
 <p>
+	I am nearing the end of my third winter and 1000 days in Antarctica. I will depart from Palmer station in 
+	October 2024 and take a much-needed vacation. After the vacation, I will continue my job hunt. I will also 
+	spend time with people I have been away from for 6 months. I will continue updating and migrating this website. 
+	Plus I have a few other projects I want to take care of.
 </p>
 
 </Layout>
