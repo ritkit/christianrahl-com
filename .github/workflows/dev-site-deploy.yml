@@ -6,10 +6,9 @@ on:
   workflow_dispatch:
 
   # Run workflow on completed push to Dev Branch
-  on:
-    push:
-      branches:
-        - 'Dev'
+  push:
+    branches:
+      - 'Dev'
   
 
 env:
