@@ -11,10 +11,8 @@ body {
     @apply max-w-screen-md;
     @apply mx-auto;
     @apply my-4;
-    @apply text-neutral-800;
-    @apply bg-neutral-200;
-    @apply dark:bg-neutral-800;
-    @apply dark:text-neutral-300;
+    @apply text-gray-800 dark:text-gray-300;
+    @apply bg-gray-200 dark:bg-gray-800;
     @apply transition-colors;
     @apply duration-700;
 }
