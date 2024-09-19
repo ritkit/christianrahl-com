@@ -94,10 +94,11 @@
     @apply list-none;
 }
 
-#postcontent ul, ol{
+#postcontent ul, 
+#postcontent ol{
+    @apply list-inside;
     @apply mb-4;
     @apply px-2;
-    @apply list-inside;
 }
 
 #postcontent ul{
@@ -115,7 +116,8 @@
 }
 
 #postcontent kbd {
-  padding: 2px 4px;
+    @apply py-0.5;
+    @apply px-1;
   font-size: 90%;
   color: #fff;
   background-color: #333;
@@ -123,7 +125,7 @@
 }
 
 #postcontent mark {
-    @apply bg-orange-300;
+    @apply bg-red-300;
     @apply text-gray-700;
 }
 
