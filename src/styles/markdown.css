@@ -5,114 +5,140 @@
 /* Markdown Styles */
 
 #postcontent {
-    @apply my-4;
+  @apply my-4;
+  @apply px-2;
 }
 
 #postcontent img {
-    @apply w-full;
-    @apply h-auto;
-    display: block;
+  @apply w-full;
+  @apply h-auto;
+  @apply block;
 }
 
 /* Headings */
-#postcontent h1, #postcontent h2, #postcontent h3, 
-#postcontent h4, #postcontent h5, #postcontent h6 {
-    @apply text-neutral-300;
-    @apply dark:text-neutral-800;
-    @apply mt-4;
-    @apply mb-2;
-    @apply font-bold;
+#postcontent h1,
+#postcontent h2,
+#postcontent h3,
+#postcontent h4,
+#postcontent h5,
+#postcontent h6 {
+  @apply text-neutral-800;
+  @apply dark:text-neutral-300;
+  @apply mt-4;
+  @apply mb-2;
+  @apply font-bold;
 }
 
 #postcontent h1 { @apply text-4xl; }
-#postcontent h2 { @apply text-3x; }
+#postcontent h2 { @apply text-3xl; }
 #postcontent h3 { @apply text-2xl; }
 #postcontent h4 { @apply text-xl; }
-#postcontent h5 { @apply text-l; }
-#postcontent h6 { @apply text-l; }
+#postcontent h5 { @apply text-lg; }
+#postcontent h6 { @apply text-lg; }
 
 /* Paragraphs */
 #postcontent p {
-    margin-top: 0;
-    margin-bottom: 16px;
-    text-align: justify;
+  @apply mt-0;
+  @apply mb-4;
+  @apply text-justify;
 }
 
 /* Blockquotes */
 #postcontent blockquote {
-    border-left: 4px solid #ccc;
-    padding: 10px 20px;
-    margin: 20px 0;
-    color: #666;
-    background-color: #f9f9f9;
-    @apply dark:bg-neutral-700 text-white border-l-4 border-neutral-500; 
+    @apply border-neutral-400 dark:border-neutral-500;
+    @apply border-l-8;
+    @apply bg-neutral-800 dark:bg-neutral-300;
+    @apply text-neutral-300 dark:text-neutral-700;
+  padding: 10px 20px;
+  margin: 20px 0;
 }
-
 /* Code Blocks and Inline Code */
 
 #postcontent pre {
-    padding: 10px;
-    overflow-x: auto;
-    margin-top: 0;
-    margin-bottom: 16px;
+  padding: 10px;
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 #postcontent code {
-    padding: 2px 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 90%;
+  padding: 2px 4px;
+  font-family: "Courier New", monospace;
+  font-size: 90%;
 }
 
 /* Tables */
 #postcontent table {
-    width: 100%;
-    margin-bottom: 20px;
-    border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
-#postcontent th, #postcontent td {
-    padding: 8px;
-    border: 1px solid #ddd;
+#postcontent th,
+#postcontent td {
+  @apply p-1;
+  @apply border-2 border-neutral-800 dark:border-neutral-300;
 }
 
 #postcontent th {
-    background-color: #f4f4f4;
-    @apply dark:bg-neutral-700;
+  @apply bg-neutral-300 dark:bg-neutral-800;
 }
 
 /* Lists */
-#postcontent .footnotes ul, ol {
+#postcontent .footnotes ul,
+#postcontent .footnotes ol {
     margin-top: 0;
-    margin-bottom: 16px;
     padding-left: 20px;
-    list-style: outside;
+    @apply mb-4;
+    @apply list-outside;
+    @apply list-none;
+}
+
+#postcontent ul, ol{
+    @apply mb-4;
+    @apply px-2;
+    @apply list-inside;
+}
+
+#postcontent ul{
+    @apply list-disc;
+}
+
+#postcontent ol{
+    @apply list-decimal;
 }
 
 /* Special HTML Tags */
 #postcontent abbr {
-    border-bottom: 1px dotted #666;
-    cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 
 #postcontent kbd {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #fff;
-    background-color: #333;
-    border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
 }
 
 #postcontent mark {
-    background-color: yellow;
-    color: black;
+    @apply bg-red-300;
+    @apply text-neutral-700;
 }
 
-#postcontent sup, #postcontent sub {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+#postcontent sup,
+#postcontent sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
-#postcontent sup { top: -0.5em; }
-#postcontent sub { bottom: -0.25em; }
+#postcontent sup {
+  top: -0.5em;
+}
+
+#postcontent sub {
+  bottom: -0.25em;
+}
