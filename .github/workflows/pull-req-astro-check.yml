@@ -1,14 +1,23 @@
 #Run Astro Check on all pull requests.
-name: Check pull request for Astro Errors.
+name: Check pull request for Astro Errors
 
 on:
+  #Set to workflow_dispatch to disable temporarily.
+  workflow_dispatch:
+
   # Allows you to run this workflow manually from the Actions tab
   #pull_request:
-    #types: [opened, reopened]
+  #  types:
+  #    - opened
+  #    - reopened
+  #  branches:
+  #    - "main"
+  #    - "dev"
 
 env:
   BUILD_PATH: "."
   NODE_VER: "20"
+  GH_TOKEN: ${{ github.token }}
 
 # Default to bash
 defaults:
