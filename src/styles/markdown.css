@@ -1,9 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Markdown Styles */
-
 #postcontent {
   @apply my-4;
   @apply px-2;
