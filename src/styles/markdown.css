@@ -1,0 +1,141 @@
+/* Markdown Styles */
+#postcontent {
+  @apply my-4;
+  @apply px-2;
+}
+
+#postcontent img {
+  @apply w-full;
+  @apply h-auto;
+  @apply block;
+}
+
+/* Headings */
+#postcontent h1,
+#postcontent h2,
+#postcontent h3,
+#postcontent h4,
+#postcontent h5,
+#postcontent h6 {
+  @apply text-gray-800;
+  @apply dark:text-gray-300;
+  @apply mt-4;
+  @apply mb-2;
+  @apply font-bold;
+}
+
+#postcontent h1 { @apply text-4xl; }
+#postcontent h2 { @apply text-3xl; }
+#postcontent h3 { @apply text-2xl; }
+#postcontent h4 { @apply text-xl; }
+#postcontent h5 { @apply text-lg; }
+#postcontent h6 { @apply text-lg; }
+
+/* Paragraphs */
+#postcontent p {
+  @apply mt-0;
+  @apply mb-4;
+  @apply text-justify;
+}
+
+/* Blockquotes */
+#postcontent blockquote {
+    @apply border-gray-400 dark:border-gray-500;
+    @apply border-l-8;
+    @apply bg-gray-800 dark:bg-gray-300;
+    @apply text-gray-300 dark:text-gray-700;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+/* Code Blocks and Inline Code */
+
+#postcontent pre {
+  padding: 10px;
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#postcontent code {
+  padding: 2px 4px;
+  font-family: "Courier New", monospace;
+  font-size: 90%;
+}
+
+/* Tables */
+#postcontent table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+#postcontent th,
+#postcontent td {
+  @apply p-1;
+  @apply border-2 border-gray-800 dark:border-gray-300;
+}
+
+#postcontent th {
+  @apply bg-gray-300 dark:bg-gray-800;
+}
+
+/* Lists */
+#postcontent .footnotes ul,
+#postcontent .footnotes ol {
+    margin-top: 0;
+    padding-left: 20px;
+    @apply mb-4;
+    @apply list-outside;
+    @apply list-none;
+}
+
+#postcontent ul, 
+#postcontent ol{
+    @apply list-inside;
+    @apply mb-4;
+    @apply px-2;
+}
+
+#postcontent ul{
+    @apply list-disc;
+}
+
+#postcontent ol{
+    @apply list-decimal;
+}
+
+/* Special HTML Tags */
+#postcontent abbr {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+#postcontent kbd {
+    @apply py-0.5;
+    @apply px-1;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+#postcontent mark {
+    @apply bg-red-300;
+    @apply text-gray-700;
+}
+
+#postcontent sup,
+#postcontent sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+#postcontent sup {
+  top: -0.5em;
+}
+
+#postcontent sub {
+  bottom: -0.25em;
+}
