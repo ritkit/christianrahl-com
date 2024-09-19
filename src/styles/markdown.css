@@ -22,8 +22,8 @@
 #postcontent h4,
 #postcontent h5,
 #postcontent h6 {
-  @apply text-neutral-800;
-  @apply dark:text-neutral-300;
+  @apply text-gray-800;
+  @apply dark:text-gray-300;
   @apply mt-4;
   @apply mb-2;
   @apply font-bold;
@@ -45,10 +45,10 @@
 
 /* Blockquotes */
 #postcontent blockquote {
-    @apply border-neutral-400 dark:border-neutral-500;
+    @apply border-gray-400 dark:border-gray-500;
     @apply border-l-8;
-    @apply bg-neutral-800 dark:bg-neutral-300;
-    @apply text-neutral-300 dark:text-neutral-700;
+    @apply bg-gray-800 dark:bg-gray-300;
+    @apply text-gray-300 dark:text-gray-700;
   padding: 10px 20px;
   margin: 20px 0;
 }
@@ -77,11 +77,11 @@
 #postcontent th,
 #postcontent td {
   @apply p-1;
-  @apply border-2 border-neutral-800 dark:border-neutral-300;
+  @apply border-2 border-gray-800 dark:border-gray-300;
 }
 
 #postcontent th {
-  @apply bg-neutral-300 dark:bg-neutral-800;
+  @apply bg-gray-300 dark:bg-gray-800;
 }
 
 /* Lists */
@@ -123,8 +123,8 @@
 }
 
 #postcontent mark {
-    @apply bg-red-300;
-    @apply text-neutral-700;
+    @apply bg-orange-300;
+    @apply text-gray-700;
 }
 
 #postcontent sup,
