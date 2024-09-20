@@ -8,8 +8,8 @@ tags: ['statusupdate', 'personal', 'website']
 
 Hello, again. This is a relaunch of my website due to a variety of reasons. Maybe because I was bored, my last site had too much flourish, or I wanted a site I could make my own.  While these were all important in my decision, it primarily came down to two specific items.
 
-1. Expenses with Bluehost
-2. Challenge my technical abilities
+- Expenses with Bluehost
+- Challenge my technical abilities
 
 Like many things, I wanted a product that fit my needs or provided something new. So, the increase in costs was a motivating factor in leaving Bluehost. Now, I get to play around with some new toys, such as advanced web frameworks, cloud storage solutions, and deployment automation tools. I will quickly dive into these items, but there will be further detail in future posts. 
 
@@ -25,10 +25,10 @@ Embracing these new, complex tools was a challenge, but as they say, without pai
 
 So, I stacked up a few solutions to make it a little more fun.
 
-1. AstroJS as the web framework
-2. GitHub for managing changes
-3. GitHub Actions/Workflows for site deployment
-4. AWS S3 to store the Site
-5. Cloudflare for serving up the site
+- AstroJS as the web framework
+- GitHub for managing changes
+- GitHub Actions/Workflows for site deployment
+- AWS S3 to store the Site
+- Cloudflare for serving up the site
 
 So far, the process of deploying this new site has been a journey, and I can't wait to share some of the technical details with you all!
