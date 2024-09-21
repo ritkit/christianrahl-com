@@ -6,7 +6,6 @@
 
 #postcontent img {
   @apply w-full;
-  @apply h-auto;
   @apply block;
 }
 
@@ -40,33 +39,33 @@
 
 /* Blockquotes */
 #postcontent blockquote {
-    @apply border-gray-400 dark:border-gray-500;
-    @apply border-l-8;
-    @apply bg-gray-800 dark:bg-gray-300;
-    @apply text-gray-300 dark:text-gray-700;
-  padding: 10px 20px;
-  margin: 20px 0;
+  @apply border-gray-400 dark:border-gray-500;
+  @apply border-l-8;
+  @apply bg-gray-800 dark:bg-gray-300;
+  @apply text-gray-300 dark:text-gray-700;
+  @apply py-2.5 px-5;
+  @apply py-5 px-0;
 }
 /* Code Blocks and Inline Code */
 
 #postcontent pre {
-  padding: 10px;
-  overflow-x: auto;
-  margin-top: 0;
-  margin-bottom: 16px;
+  @apply p-2.5;
+  @apply overflow-x-auto;
+  @apply mt-0;
+  @apply mb-4;
 }
 
 #postcontent code {
-  padding: 2px 4px;
+  @apply py-0.5 px-1;
   font-family: "Courier New", monospace;
   font-size: 90%;
 }
 
 /* Tables */
 #postcontent table {
-  width: 100%;
-  margin-bottom: 20px;
-  border-collapse: collapse;
+  @apply w-full;
+  @apply mb-5;
+  @apply border-collapse;
 }
 
 #postcontent th,
@@ -82,26 +81,26 @@
 /* Lists */
 #postcontent .footnotes ul,
 #postcontent .footnotes ol {
-    margin-top: 0;
-    padding-left: 20px;
-    @apply mb-4;
-    @apply list-outside;
-    @apply list-none;
+  @apply mt-0;
+  @apply pl-5;
+  @apply mb-4;
+  @apply list-outside;
+  @apply list-none;
 }
 
 #postcontent ul, 
 #postcontent ol{
-    @apply list-inside;
-    @apply mb-4;
-    @apply px-2;
+  @apply list-inside;
+  @apply mb-4;
+  @apply px-2;
 }
 
 #postcontent ul{
-    @apply list-disc;
+  @apply list-disc;
 }
 
 #postcontent ol{
-    @apply list-decimal;
+  @apply list-decimal;
 }
 
 /* Special HTML Tags */
