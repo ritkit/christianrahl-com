@@ -14,7 +14,7 @@ import BlogHeroImg from "@components/BlogHeroImg.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, tags, draft = false } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, draft = false, minutesRead = "5 min read" } = Astro.props;
 
 ---
 
@@ -34,9 +34,9 @@ const { title, description, pubDate, updatedDate, heroImage, tags, draft = false
         </div>
         <div class="text-gray-500 dark:text-gray-400 text-xs font-medium flex justify-between mb-2">
           <div><FormattedDate date={pubDate}/>{updatedDate && (<span> &#40;Updated <FormattedDate date={updatedDate}/>&#41;</span>)}</div>
-          <!--p class=" tracking-wide">
-            5 min read
-          </p-->
+          <p class=" tracking-wide">
+            {minutesRead}
+          </p>
         </div>
         <div>
           {
