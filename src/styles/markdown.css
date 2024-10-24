@@ -1,4 +1,9 @@
 /* Markdown Styles */
+#posttitle h1{
+  @apply text-4xl;
+  @apply justify-self-center w-auto;
+}
+
 #postcontent {
   @apply my-4;
   @apply px-2;
@@ -8,6 +13,11 @@
   @apply w-full;
   @apply h-auto;
   @apply block;
+}
+
+#postcontent a {
+  @apply underline decoration-dashed; 
+  @apply hover:dark:text-cblue-light hover:text-rblue-dark
 }
 
 /* Headings */
