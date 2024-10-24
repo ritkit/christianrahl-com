@@ -17,4 +17,4 @@ const fullImagePath = "/src/images/blogheros/"+src;
 if (!images[fullImagePath]) throw new Error(`"${fullImagePath}" does not exist in glob: "/src/images/blogheros/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<Image src={images[fullImagePath]()} alt={alt} />
+<Image src={images[fullImagePath]()} alt={alt}/>

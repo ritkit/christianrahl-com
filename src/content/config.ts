@@ -11,9 +11,11 @@ const blog = defineCollection({
         pubDate: z.coerce.date(),
         updatedDate: z.coerce.date().optional(),
         heroImage: z.string().optional(),
+        heroAlt: z.string().optional(),
         tags: z.array(z.string()).optional(),
         // Hide page if it is a draft, page will still be generated, just with a different slug.
-        draft: z.boolean().optional()
+        draft: z.boolean().optional(),
+        minutesRead: z.string().optional(),
     }),
 })
 

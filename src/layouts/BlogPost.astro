@@ -14,7 +14,7 @@ import BlogHeroImg from "@components/BlogHeroImg.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, tags, draft = false } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt = "", tags, draft = false, minutesRead = "5 min read" } = Astro.props;
 
 ---
 
@@ -27,21 +27,21 @@ const { title, description, pubDate, updatedDate, heroImage, tags, draft = false
     {draft && <AlertHead alertTitle="Draft" description="This article is currently a draft. URL and text may change." shrinkable/>}
     <main>
       <article class="px-4">
-        <div class="flex w-100 justify-center">
-          <h1 class="text-5xl my-4">
+        <div class="flex w-100 mx-auto justify-center">
+          <h1 class="text-center text-5xl my-4">
             {title}
           </h1>
         </div>
-        <div class="text-gray-500 dark:text-gray-400 text-xs font-medium flex justify-between mb-2">
+        <div class="text-gray-500 dark:text-gray-400 text-s font-medium flex justify-between mb-2">
           <div><FormattedDate date={pubDate}/>{updatedDate && (<span> &#40;Updated <FormattedDate date={updatedDate}/>&#41;</span>)}</div>
-          <!--p class=" tracking-wide">
-            5 min read
-          </p-->
+          <p class=" tracking-wide">
+            {minutesRead}
+          </p>
         </div>
         <div>
           {
             heroImage && (
-              <BlogHeroImg src={heroImage} alt="" class="md:max-h-10"/>
+              <BlogHeroImg src={heroImage} alt={heroAlt} class="md:max-h-10"/>
             )
           }
         </div>

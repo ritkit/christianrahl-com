@@ -1,4 +1,7 @@
 import { defineConfig } from 'astro/config';
+
+import { remarkReadingTime } from '/src/plugin/remark-reading-time.mjs'
+
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -15,6 +18,7 @@ export default defineConfig({
       }), 
       icon()],
     markdown: {
+        remarkPlugins: [remarkReadingTime],
         shikiConfig: {
           // Choose from Shiki's built-in themes (or add your own)
           // https://shiki.style/themes
@@ -26,9 +30,5 @@ export default defineConfig({
         },
       },
       image: {
-        remotePatterns: [{
-          protocol: 'https',
-          hostname: '*.unsplash.com',
-        }],
       },
 })
