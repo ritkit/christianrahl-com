@@ -1,7 +1,7 @@
 ---
 title: 'Glacier Ice, Ocean Ice, No Ice'
 description: 'Time to head home from Palmer station across the Drake riding the Palmer.'
-pubDate: '13 Oct 2024'
+pubDate: '23 Oct 2024'
 heroImage: 'departing-palmer-2024.jpg'
 heroAlt: "View of palmer station while departing on the NBP."
 tags: ['story', 'personal', 'antarctica', 'travel']
