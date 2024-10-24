@@ -5,7 +5,6 @@ pubDate: '13 Oct 2024'
 heroImage: 'departing-palmer-2024.jpg'
 heroAlt: "View of palmer station while departing on the NBP."
 tags: ['story', 'personal', 'antarctica', 'travel']
-draft: true
 ---
 Well, it is time to experience a different kind of Drake, one that sings of ice scratching along a ship's hull. So similar to the artist Drake.
 
