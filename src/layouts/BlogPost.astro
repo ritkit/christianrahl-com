@@ -14,7 +14,7 @@ import BlogHeroImg from "@components/BlogHeroImg.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags, draft = false, minutesRead = "5 min read" } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt = "", tags, draft = false, minutesRead = "5 min read" } = Astro.props;
 
 ---
 

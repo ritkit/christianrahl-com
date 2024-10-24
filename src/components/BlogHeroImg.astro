@@ -1,12 +1,11 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-import { notFound } from 'astro:i18n';
 import type { ClassNameValue } from 'tailwind-merge';
 
 interface Props{
     src: string;
-    alt: string|null;
+    alt: string;
     class: ClassNameValue;
 }
 
