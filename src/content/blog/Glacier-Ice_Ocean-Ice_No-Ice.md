@@ -49,14 +49,16 @@ With land nearby we now have birds all around us. Some of the fellow crew mates 
 - Arctic Terns
 - Gulls
 
-Now, that list has grown to be primarily a variety of albatrosses.
+Now, that list has grown to be primarily a variety of albatrosses and this is only what I can remember.
 
 - Giant petrels
 - Albatrosses
     - Black Browed
-    - Grey
+    - Grey-Headed
     - Brown Browed
 - Cormorants
+- Gulls
+- Prion (These were my favorites)
 
 Either way the ocean air force (sea birds) are giving us quite the show. It is easy to see why so many explorers dedicated pages to these ocean going birds. 
 
