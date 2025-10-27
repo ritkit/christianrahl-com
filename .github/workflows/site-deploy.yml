@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-Latest
     steps:
       - name: Get Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.BUILD_PATH }}/dist/
