@@ -12,8 +12,10 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
-const { Content } = await render(post);
+// remarkPluginFrontmatter carries values set by remark plugins, e.g. minutesRead
+// from src/plugin/remark-reading-time.mjs. They are not part of post.data.
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
-<BlogPost {...post.data}>
+<BlogPost {...post.data} minutesRead={remarkPluginFrontmatter.minutesRead}>
 	<Content />
 </BlogPost>
