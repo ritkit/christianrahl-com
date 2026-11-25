@@ -63,6 +63,14 @@ jobs:
       #Build ASTRO
       - name: Install Modules
         run: ${{ steps.detect-package-manager.outputs.manager}} ${{ steps.detect-package-manager.outputs.command }}
+      # Reuse Astro's optimized-image cache between runs (npm ci wipes node_modules, so restore after install)
+      - name: Cache Astro optimized images
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.astro
+          key: astro-assets-${{ runner.os }}-${{ hashFiles('src/images/**', 'package-lock.json') }}
+          restore-keys: |
+            astro-assets-${{ runner.os }}-
       - name: Build Application
         run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Upload artifact
