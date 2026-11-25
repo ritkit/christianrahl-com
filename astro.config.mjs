@@ -27,7 +27,15 @@ export default defineConfig({
           "media-src 'self'",
           "base-uri 'self'",
           "form-action 'self'",
+          // Cloudflare Web Analytics: Cloudflare injects its beacon script into pages
+          // served to browsers, and the beacon reports back to these hosts.
+          "connect-src 'self' https://cloudflareinsights.com",
         ],
+        scriptDirective: {
+          // Replaces Astro's default script-src sources, so 'self' must be listed;
+          // Astro still appends the hashes of its inline scripts.
+          resources: ["'self'", "https://static.cloudflareinsights.com"],
+        },
       },
     },
     integrations: [
