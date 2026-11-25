@@ -1,14 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Class-based dark mode: BaseHead/ThemeIcon toggle .dark on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-rblue-light: #0A5098;
+    --color-rblue-dark: #0A5098;
+    --color-cblue-light: #6599CE;
+    --color-cblue-dark: #6599CE;
+}
+
+/* Keep Tailwind v3 defaults that v4 changed */
+@layer base {
+    *, ::after, ::before, ::backdrop, ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+    button:not(:disabled), [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
 
 html {
-    font-family: 'Robotto', monospace;
+    font-family: 'Roboto', monospace;
     width: 100%;
 }
 
 body {
-    @apply max-w-screen-md;
+    @apply max-w-(--breakpoint-md);
     @apply mx-auto;
     @apply my-4;
     @apply text-gray-800 dark:text-gray-300;

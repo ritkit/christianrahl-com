@@ -10,21 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^3.1.5",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.1",
-    "@astropub/icons": "^0.2.0",
-    "astro": "^4.15.4",
-    "astro-icon": "^1.1.1",
-    "astro-navbar": "^2.3.2",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.10",
+    "@astrojs/mdx": "^8.1.6",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.6",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.13",
+    "astro-icon": "^1.2.0",
+    "astro-navbar": "^2.4.0",
     "clsx": "^2.1.1",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^3.4.12",
-    "typescript": "^5.4.5"
+    "tailwind-merge": "^3.7.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@iconify-json/radix-icons": "^1.2.0",
