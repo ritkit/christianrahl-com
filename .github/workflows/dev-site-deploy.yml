@@ -13,7 +13,7 @@ on:
 
 env:
   BUILD_PATH: "."
-  NODE_VER: "20"
+  NODE_VER: "24"
   ARTIFACT_NAME: "DEV-SITE-DIST" 
 
 concurrency:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
       #Prepare and restore cache for build repositories
@@ -56,7 +56,7 @@ jobs:
             exit 1
           fi
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VER}}
           cache: ${{ steps.detect-package-manager.outputs.manager }}
@@ -67,7 +67,7 @@ jobs:
       - name: Build Application
         run: ${{ steps.detect-package-manager.outputs.runner }} build -- --site "https://dev.christianrahl.com"
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.BUILD_PATH }}/dist/
@@ -78,12 +78,12 @@ jobs:
     runs-on: ubuntu-Latest
     steps:
       - name: Get Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.BUILD_PATH }}/dist/
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clear Cloudflare cache
-        uses: Cyb3r-Jak3/action-cloudflare-cache@v2.0.0
+        uses: Cyb3r-Jak3/action-cloudflare-cache@v4
         with:
             zone: ${{ secrets.CF_ZONE_ID }}
             api_token:  ${{ secrets.CF_CACHE_REFRESH_TOKEN }}
