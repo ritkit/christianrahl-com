@@ -15,6 +15,29 @@ export default defineConfig({
     // text and a link that starts on the next source line ("more about me" -> "moreabout me").
     // Keep the pre-v7 HTML compression.
     compressHTML: true,
+    // Content-Security-Policy as a <meta> tag on every page. Astro adds script-src
+    // and style-src with a sha256 hash of each inline script/style it renders;
+    // everything else is denied unless listed here. (frame-ancestors can't be set in
+    // a <meta> CSP; the Cloudflare X-Frame-Options: SAMEORIGIN header covers that.)
+    security: {
+      csp: {
+        directives: [
+          "default-src 'none'",
+          "img-src 'self'",
+          "media-src 'self'",
+          "base-uri 'self'",
+          "form-action 'self'",
+          // Cloudflare Web Analytics: Cloudflare injects its beacon script into pages
+          // served to browsers, and the beacon reports back to these hosts.
+          "connect-src 'self' https://cloudflareinsights.com",
+        ],
+        scriptDirective: {
+          // Replaces Astro's default script-src sources, so 'self' must be listed;
+          // Astro still appends the hashes of its inline scripts.
+          resources: ["'self'", "https://static.cloudflareinsights.com"],
+        },
+      },
+    },
     integrations: [
       mdx(), 
       sitemap(), 
