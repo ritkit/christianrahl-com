@@ -11,10 +11,20 @@ import FormattedDate from "@components/FormattedDate.astro";
 import TagLink from "@components/TagLink.astro";
 
 import BlogHeroImg from "@components/BlogHeroImg.astro";
+import getReadingTime from "reading-time";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  /** e.g. "3 min read". Blog posts get it from the remark plugin; other pages are measured below. */
+  minutesRead?: string;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, heroAlt = "", tags, draft = false, minutesRead = "5 min read" } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt = "", tags, draft = false } = Astro.props;
+
+// Pages that are not Markdown (e.g. about.astro) never run the remark plugin, so
+// measure their rendered text with the same library instead of showing a fixed guess.
+const minutesRead = Astro.props.minutesRead ?? getReadingTime(
+  (await Astro.slots.render("default")).replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/g, " ").replace(/<[^>]+>/g, " "),
+).text;
 
 ---
 
