@@ -12,11 +12,11 @@ First day in, smooth as butter, we are protected by the islands while passing th
 
 ![Berg just outside of palmer.](src/images/berg_outside_palmer.jpg)
 
-But I digress. it is currently the second day, and I am in Aft Control on the ship Nathaniel B Palmer (NBP) heading back to Punta Arenas. I have just finished my third winter in Antarctica at Palmer Station. Yes, there is a ship and a station named after Nathaniel B Palmer. He was one of the first, if not the first, to spot the Antarctica mainland along the Antarctic peninsula. [Here is a good article](https://www.lindahall.org/about/news/scientist-of-the-day/nathaniel-palmer/) about his impact. So I sit rolling in the seas on the Palmer leaving Palmer.
+But I digress, it is currently the second day, and I am in Aft Control on the ship Nathaniel B Palmer (NBP) heading back to Punta Arenas. I have just finished my third winter in Antarctica at Palmer Station. Yes, there is a ship and a station named after Nathaniel B Palmer. He was one of the first, if not the first, to spot the Antarctica mainland along the Antarctic peninsula. [Here is a good article](https://www.lindahall.org/about/news/scientist-of-the-day/nathaniel-palmer/) about his impact. So I sit rolling in the seas on the Palmer leaving Palmer.
 
 ![Palmer at Palmer at night.](src/images/palmer-at-night.jpg)
 
-As for the Drake it is one of the more infamous seas in the world. Sir Francis Drake is the eponym for this passage. He was an explorer and a5 privateer which is basically a pirate flying under the flag of a nation. He also actually never sailed the Drake, typically stuck to the Strait of Magellan.
+As for the Drake it is one of the more infamous seas in the world. Sir Francis Drake is the eponym for this passage. He was an explorer and a privateer which is  pirate flying under the flag of a nation (in the name of Queen and Country). He also actually never sailed the Drake, typically stuck to the Strait of Magellan.
 
 This passage has two conditions, the Drake lake and the Drake shake. You hope for the first and pray the second will not be so terrible. In a modern icebreaking ship, there is zero concern about the safety of the ship during the crossing. The only vulnerability on the Drake is the humans inside being tossed around.
 
