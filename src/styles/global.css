@@ -20,34 +20,48 @@
     }
 }
 
-html {
-    font-family: 'Roboto', monospace;
-    width: 100%;
-}
+/*
+ * Element defaults live in the base layer. Tailwind v4 puts utilities in
+ * @layer utilities, and unlayered CSS beats every layer regardless of
+ * specificity, so unlayered element rules here would override utility classes
+ * (e.g. this h1 rule forced every heading to text-2xl). In the base layer,
+ * classes like text-5xl win again, as they did in v3.
+ */
+@layer base {
+    html {
+        /* The site's look is the browser's default monospace font (the old
+           'Robotto' value was a typo that always fell back to it). Listing it
+           twice (quoted, then generic) is deliberate: a lone generic
+           `monospace` makes browsers shrink the base font size from 16px to
+           13px, and the CSS minifier collapses an unquoted duplicate. */
+        font-family: "monospace", monospace;
+        width: 100%;
+    }
 
-body {
-    @apply max-w-(--breakpoint-md);
-    @apply mx-auto;
-    @apply my-4;
-    @apply text-gray-800 dark:text-gray-300;
-    @apply bg-gray-200 dark:bg-gray-800;
-    @apply transition-colors;
-    @apply duration-700;
-}
+    body {
+        @apply max-w-(--breakpoint-md);
+        @apply mx-auto;
+        @apply my-4;
+        @apply text-gray-800 dark:text-gray-300;
+        @apply bg-gray-200 dark:bg-gray-800;
+        @apply transition-colors;
+        @apply duration-700;
+    }
 
-a {
-    color: inherit;
-}
+    a {
+        color: inherit;
+    }
 
-a:hover {
-    text-decoration: underline;
-}
+    a:hover {
+        text-decoration: underline;
+    }
 
-h1{
-    @apply md:text-2xl
-}
+    h1 {
+        @apply md:text-2xl;
+    }
 
-img {
-    @apply rounded-lg;
-    @apply h-auto
+    img {
+        @apply rounded-lg;
+        @apply h-auto;
+    }
 }
