@@ -28,7 +28,10 @@ We started with the lake, and the sea state has deteriorated to 15, maybe 20 ft 
 
 The nausea is a price I am more than willing to pay for the reward that was winter at Palmer station. I will talk about the winter in another blog post. Here is the short version; there is a reason it is joked about being the retirement home of Antarctica. There are comforts and experiences that no other US station contains. 
 
-![Seal on ice bailing as the NBP passes by.](/video/seal-on-ice.mp4)
+<video controls playsinline preload="metadata" aria-label="Seal on ice bailing as the NBP passes by." title="Seal on ice bailing as the NBP passes by.">
+  <source src="/video/seal-on-ice.mp4" type="video/mp4" />
+  Your browser cannot play this video. <a href="/video/seal-on-ice.mp4">Download the seal video</a>.
+</video>
 
 It is now the third day, and things are getting better for me, not for the sea. The sea state is a little more confused; we still encounter the 15 to 20-foot swell, but we are deeper into a storm. With the storm comes wind, and that means the wind-blown waves are building up. Surprisingly, while it looks rougher outside, I prefer it. The ship's movements are more confused, but the overall movement is milder. I have zero nausea, and we are watching some Shawshank Redemption, surprisingly this may be my first time seeing it fully. I have gained my sea legs today.
 
