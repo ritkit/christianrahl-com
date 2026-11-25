@@ -16,7 +16,7 @@ on:
 
 env:
   BUILD_PATH: "."
-  NODE_VER: "20"
+  NODE_VER: "24"
   GH_TOKEN: ${{ github.token }}
 
 # Default to bash
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
       #Prepare and restore cache for build repositories
@@ -55,7 +55,7 @@ jobs:
             exit 1
           fi
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VER}}
           cache: ${{ steps.detect-package-manager.outputs.manager }}
