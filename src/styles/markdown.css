@@ -1,3 +1,5 @@
+@reference "./global.css";
+
 /* Markdown Styles */
 #posttitle h1{
   @apply text-4xl;

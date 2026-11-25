@@ -9,7 +9,7 @@ import BlogCard from "@components/BlogCard.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-    const tags = posts.flatMap((post: Post) => post.data.tags);
+    const tags = [...new Set(posts.flatMap((post: Post) => post.data.tags ?? []))];
     return tags.map((tag: any) => ({
         params: { slug: tag },
         props: { tag, posts: posts.filter((post: Post) => post.data?.tags?.includes(tag)) },
@@ -28,7 +28,7 @@ type Post = CollectionEntry<'blog'>;
   <body>
     <Header />
     <main class="flex flex-col justify-center px-4 py-6">
-        <h2 class="w-full text-2xl font-bold text-black dark:text-white mb-8"> Posts tagged with {tag}</h1>
+        <h2 class="w-full text-2xl font-bold text-black dark:text-white mb-8"> Posts tagged with {tag}</h2>
         <ul>
           {posts.map((post: Post) => (
             <div class="flex"><BlogCard post={post}/></div>

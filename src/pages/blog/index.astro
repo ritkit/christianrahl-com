@@ -20,7 +20,7 @@ const postByYear: {
 } = {}
 
 posts.forEach((post) => {
-  const year = post.data.pubDate.getFullYear()
+  const year = post.data.pubDate.getUTCFullYear()
   if (!postByYear[year]) {
     postByYear[year] = []
   }
