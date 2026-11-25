@@ -12,8 +12,18 @@ const { alertTitle, description, shrinkable = true } = Astro.props
 <div class="sticky top-2 mx-auto flex justify-center items-center rounded-full bg-orange-400/90 text-orange-50 px-2 py-1 size-fit" role="alert">
       <span class="mr-1 rounded-full bg-orange-600 px-2 py-1 text-xs font-bold uppercase">{alertTitle}</span>
       <span class="mx-1 text-left font-semibold">{description}</span>
-      {shrinkable && <a onclick="this.parentElement.style.display='none'" class="ml-1 cursor-pointer group">
+      {shrinkable && <button type="button" data-dismiss-alert aria-label="Dismiss" class="ml-1 cursor-pointer group">
             <Icon name="radix-icons:cross-2" 
                   class="justify-self-end transition-colors ease-in-out duration-500 iconify text-orange-800 group-hover:text-orange-50"/>
-      </a>}
+      </button>}
 </div>
+
+<script>
+  // Close button for the alert banner. A listener instead of an inline onclick=
+  // attribute, because the Content-Security-Policy blocks inline event handlers.
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-dismiss-alert]')) {
+    button.addEventListener('click', () => {
+      if (button.parentElement) button.parentElement.style.display = 'none';
+    });
+  }
+</script>
