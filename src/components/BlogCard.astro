@@ -11,12 +11,12 @@ const {post} = Astro.props;
 ---
 
 <div class="flex gap-2 justify-between pb-4">
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 min-w-0">
         <a class="font-bold text-lg" id="title" href={`/blog/${post.id}`} aria-labelledby="title">
             {post.data.title}
         </a>
         <p>{post.data.description}</p>
-        <div class="flex gap-2">
+        <div class="flex flex-wrap gap-2">
             {post.data.tags?.map((i: any) => {
             return <TagLink tag={i} />;
             })}

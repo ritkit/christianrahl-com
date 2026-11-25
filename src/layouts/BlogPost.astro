@@ -52,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage, heroAlt = "", tags,
           {
             tags && (
                 <h1 class="flex text-xl"> Tags: </h1>
-                <ul class="flex gap-2">
+                <ul class="flex flex-wrap gap-2">
                   {tags.map((tag: any) => (
                     <li>
                       <TagLink tag={tag} />
