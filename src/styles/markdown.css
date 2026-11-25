@@ -17,6 +17,15 @@
   @apply block;
 }
 
+/* Videos embedded in posts get the same full-width, rounded look as images */
+#postcontent video {
+  @apply w-full;
+  @apply h-auto;
+  @apply block;
+  @apply rounded-lg;
+  @apply mb-4;
+}
+
 #postcontent a {
   @apply underline decoration-dashed; 
   @apply hover:dark:text-cblue-light hover:text-rblue-dark
