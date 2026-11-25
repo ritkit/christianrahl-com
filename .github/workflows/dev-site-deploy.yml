@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clear Cloudflare cache
-        uses: Cyb3r-Jak3/action-cloudflare-cache@v4
+        uses: Cyb3r-Jak3/action-cloudflare-cache@v4.0.0
         with:
             zone: ${{ secrets.CF_ZONE_ID }}
             api_token:  ${{ secrets.CF_CACHE_REFRESH_TOKEN }}
