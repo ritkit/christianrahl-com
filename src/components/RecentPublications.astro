@@ -9,7 +9,7 @@ let recentPosts = posts.slice(0, numberOfPostsToDisplay);
 
 
 {recentPosts && (
-    <div class="px-2 md:w-100 flex flex-col gap-5 mt-4">
+    <div class="px-2 flex flex-col gap-5 mt-4">
       <h1 class="font-large text-4xl mt-6">Recent Publications</h1>
       {recentPosts.map((post: any) => (
         <div class="flex"><BlogCard post={post}/></div>

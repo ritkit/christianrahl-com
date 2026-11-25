@@ -15,21 +15,20 @@
     "@astrojs/mdx": "^8.1.6",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.6",
+    "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.13",
     "astro-icon": "^1.2.0",
     "astro-navbar": "^2.4.0",
     "clsx": "^2.1.1",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^3.4.12",
+    "tailwind-merge": "^3.7.1",
+    "tailwindcss": "^4.3.5",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@iconify-json/radix-icons": "^1.2.0",
     "@iconify-json/ri": "^1.2.0",
-    "@iconify-json/streamline": "^1.2.0",
-    "autoprefixer": "^10.7.0",
-    "postcss": "^8.5.33"
+    "@iconify-json/streamline": "^1.2.0"
   }
 }

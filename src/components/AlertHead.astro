@@ -9,7 +9,7 @@ interface Props {
 
 const { alertTitle, description, shrinkable = true } = Astro.props
 ---
-<div class="sticky top-2 mx-auto flex justify-center items-center rounded-full bg-orange-400 bg-opacity-90 text-orange-50 px-2 py-1 size-fit" role="alert">
+<div class="sticky top-2 mx-auto flex justify-center items-center rounded-full bg-orange-400/90 text-orange-50 px-2 py-1 size-fit" role="alert">
       <span class="mr-1 rounded-full bg-orange-600 px-2 py-1 text-xs font-bold uppercase">{alertTitle}</span>
       <span class="mx-1 text-left font-semibold">{description}</span>
       {shrinkable && <a onclick="this.parentElement.style.display='none'" class="ml-1 cursor-pointer group">
